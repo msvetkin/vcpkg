@@ -1,0 +1,8 @@
+if(VCPKG_TARGET_IS_LINUX AND ("${VCPKG_LIBRARY_LINKAGE}" STREQUAL "dynamic"))
+    if(NOT DEFINED VCPKG_BUILD_TYPE OR "${VCPKG_BUILD_TYPE}" STREQUAL "release")
+        z_vcpkg_fixup_rpath_in_dir("${CURRENT_PACKAGES_DIR}" EXCLUDE_FOLDERS "debug")
+    endif()
+    if(NOT DEFINED VCPKG_BUILD_TYPE OR "${VCPKG_BUILD_TYPE}" STREQUAL "debug")
+        z_vcpkg_fixup_rpath_in_dir("${CURRENT_PACKAGES_DIR}/debug")
+    endif()
+endif()
