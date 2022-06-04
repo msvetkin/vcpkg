@@ -7,7 +7,7 @@
   "dependencies": [
     {
       "name": "angle",
-      "platform": "!windows"
+      "platform": "windows"
     },
     "double-conversion",
     "egl-registry",
